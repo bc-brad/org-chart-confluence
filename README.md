@@ -6,8 +6,18 @@ This is a bit of an unconventional approach to the traditional chart-style org c
 
 Using a combination of Confluence macros and custom JavaScript, I've created a pseudo-framework to automate the org chart creation process. 
 
-#instructions
+#how it works
 
-1. At the top of your Confluence page, use the "user-profile" macro to add each member of your team at the top of the page. Don't worry about formatting, as these will not be visible on the page. We're just using this as the base data for everything else!
+1. The "user-profile" macro is utilized to add each team member to the top of the page. This is literally just a huge list of profiles, but the formatting isn't important here, as these will not be visible on the page (hidden with CSS). This is just being used to pull in the user data!
 
-2. Use the "html" macro to add <a href="https://github.com/Bairdley/org-chart-confluence/blob/master/org-chart.html">this file</a> to the page. 
+2. Custom HTML and CSS are added via the "html" macro. This sets the wireframe for the enire org chart.
+
+3. The "html" macro is used once more to add the script, which will be inserting the data into the wireframe from step 2.
+
+#about the script
+
+Because the "user-profile" macro doesn't have any knowledge of the team's structure, this script has to take it a step further in labeling each user with a start date and a team lead. Each division of management is organized in the same way, so we're left with two arrays that split the "user-profile" list into two main groups: agents & managers.
+
+The "Person" constructor employs several methods to manipulate the data that is now made available by the "user-profile" list and the "agent" & "manager" arrays.
+
+The remainder of the script primarily performs several checks to sort each tem member into the proper heading.
