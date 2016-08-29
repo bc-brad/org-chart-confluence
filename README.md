@@ -10,4 +10,4 @@ Using a combination of Confluence macros and custom JavaScript, I've created a p
 
 1. At the top of your Confluence page, use the "user-profile" macro to add each member of your team at the top of the page. Don't worry about formatting, as these will not be visible on the page. We're just using this as the base data for everything else!
 
-2. 
+2. Use the "html" macro to add <a href="https://github.com/Bairdley/org-chart-confluence/blob/master/org-chart.html">this file</a> to the page. 
